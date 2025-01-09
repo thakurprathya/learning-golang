@@ -39,4 +39,12 @@ func main() {
 	sort.Ints(firstSlice)
 	fmt.Println("after sort firstSlice:", firstSlice)
 	fmt.Println("is firstSlice sorted:", sort.IntsAreSorted(firstSlice))
+
+	// removing value from slice based on index
+	var strings = []string{"first", "second", "third", "fourth", "fifth"}
+	fmt.Println("strings:", strings)
+
+	var index int = 1
+	strings = append(strings[:index], strings[index+1:]...) // excluding the index
+	fmt.Println("strings:", strings)
 }
