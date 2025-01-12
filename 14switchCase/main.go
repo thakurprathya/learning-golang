@@ -4,14 +4,19 @@ import (
 	"fmt"
 	"math/rand"
 	"time"
+	// "crypto/rand"
 )
 
 func main() {
 	fmt.Println("switch case in Golang")
 
+	// math random
 	// Initializes the random number generator using current time as seed to ensure different random numbers on each program execution
-	r := rand.New(rand.NewSource(time.Now().UnixNano()))
-	diceNumber := r.Intn(6) + 1 // will generate a number between 0 to 5 and adding 1
+	r := rand.New(rand.NewSource(time.Now().UnixNano())) // as time is not constant we use it as source for random algorithm
+	diceNumber := r.Intn(6) + 1                          // will generate a number between 0 to 5 and adding 1
+
+	// crypto random, more random more accurate
+	// diceNumber, err := rand.Int(rand.Reader, big.NewInt(6)) // will generate a number between 0 to 5
 
 	switch diceNumber {
 	case 1:
